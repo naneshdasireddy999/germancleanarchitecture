@@ -1,0 +1,8 @@
+version: "Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)"
+options: "c4dfddf03511dd2ad3594563f40db9ba58ab950ec70a68e67e005e4bf7b0b81f"
+build_start_time: [1674202463, 378161907]
+build_end_time: [1674202471, 466758012]
+inputs:
+  "/Users/dasnanes/Documents/GitHub/germancleanarchitecture/macos/Flutter/GeneratedPluginRegistrant.swift": [1674202444, 648318290]
+  "/Users/dasnanes/Documents/GitHub/germancleanarchitecture/macos/Runner/AppDelegate.swift": [1639683103, 0]
+  "/Users/dasnanes/Documents/GitHub/germancleanarchitecture/macos/Runner/MainFlutterWindow.swift": [1639683103, 0]

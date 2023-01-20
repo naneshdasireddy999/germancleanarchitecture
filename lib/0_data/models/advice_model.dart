@@ -14,11 +14,11 @@ String adviceModelToJson(AdviceModel? data) => json.encode(data!.toJson());
 
 class AdviceModel extends AdviceEntity with EquatableMixin {
   AdviceModel({
-    required this.adviceId,
+    this.adviceId,
     required this.myadvice,
   }) : super(advice: myadvice, id: adviceId);
 
-  final int adviceId;
+  final int? adviceId;
   final String myadvice;
 
   factory AdviceModel.fromJson(Map<String, dynamic> json) => AdviceModel(

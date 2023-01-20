@@ -1,0 +1,4 @@
+#Fri Jan 20 19:47:46 IST 2023
+base.0=/Users/dasnanes/Documents/GitHub/germancleanarchitecture/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
