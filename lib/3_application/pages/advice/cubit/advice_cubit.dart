@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:connectivity/connectivity.dart';
 import 'package:dfg/1_domain/entities/advice_entity.dart';
 import 'package:dfg/1_domain/failures/failures.dart';
 import 'package:dfg/1_domain/usecases/get_advice_usecases.dart';
@@ -15,7 +16,9 @@ class AdviceCubit extends Cubit<AdviceState> {
   var myadvice = const AdviceEntity(id: 0, advice: '');
   String errormessage = '';
   final AdviceUsecases adviceusecases;
+
   //could also use other usecases too
+
   Future<void> getadvice() async {
     emit(Adviceloadingstate());
     final failureoradvice = await adviceusecases.getadvice();

@@ -13,6 +13,10 @@ class NetworkInfoImpl implements NetworkInfo {
   Future<bool> get isConnected async {
     var connectivity = Connectivity();
     var result = await connectivity.checkConnectivity();
+    connectivity.onConnectivityChanged.listen((event) {
+      result = event;
+      print(result);
+    });
 
     switch (result) {
       case ConnectivityResult.wifi:
