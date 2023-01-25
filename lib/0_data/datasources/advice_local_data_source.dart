@@ -43,10 +43,13 @@ class SqlHelper {
     return db.query('advice', orderBy: 'id', whereArgs: [id], limit: 1);
   }
 
-  static Future<int> createitem(String advice) async {
+  static Future<int> createadvice(AdviceModel advicetocache) async {
     //this method is called to insert data into tables
     final db = await SqlHelper.db();
-    final data = {'advice': advice};
+    final data = {
+      'adviceId': advicetocache.adviceId,
+      'advice': advicetocache.myadvice
+    };
     final id = await db.insert('advice', data,
         conflictAlgorithm: sql.ConflictAlgorithm.replace);
     return id;
@@ -81,13 +84,7 @@ class AdviceLocalDataSourceImpl implements AdviceLocalDataSource {
   AdviceLocalDataSourceImpl();
   @override
   Future<void> cacheadvice(AdviceModel adviceToCache) async {
-    var db = await SqlHelper.db();
-    final data = {
-      'adviceid': adviceToCache.adviceId,
-      'advice': adviceToCache.myadvice
-    };
-    await db.insert('advice', data,
-        conflictAlgorithm: sql.ConflictAlgorithm.replace);
+    await SqlHelper.createadvice(adviceToCache);
   }
 
   @override
