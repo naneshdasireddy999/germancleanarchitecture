@@ -15,7 +15,6 @@ class NetworkInfoImpl implements NetworkInfo {
     var result = await connectivity.checkConnectivity();
     connectivity.onConnectivityChanged.listen((event) {
       result = event;
-      print(result);
     });
 
     switch (result) {
