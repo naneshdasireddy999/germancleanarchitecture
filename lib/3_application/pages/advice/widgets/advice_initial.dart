@@ -11,6 +11,7 @@ class AdviceInitial extends StatelessWidget {
     return Center(
       child: Text(
         'your advice is waiting for you',
+        //again using centralized theme
         style: themedata.textTheme.headline1,
       ),
     );

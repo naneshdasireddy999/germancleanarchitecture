@@ -10,6 +10,7 @@ class AdviceLoading extends StatelessWidget {
     final themedata = Theme.of(context);
     return Center(
       child: CircularProgressIndicator(
+        //color is using from centralized theme
         color: themedata.colorScheme.secondary,
       ),
     );

@@ -1,3 +1,7 @@
-class ServerException implements Exception {}
+class ServerException implements Exception {
+  //this is a custom exception created by us
+}
 
-class CacheException implements Exception {}
+class CacheException implements Exception {
+  //this is a custom exception created by us
+}

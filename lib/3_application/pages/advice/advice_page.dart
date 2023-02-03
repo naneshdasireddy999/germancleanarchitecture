@@ -23,12 +23,14 @@ class AdvicePage extends StatelessWidget {
           Switch(
               value: controller.isdarkmode,
               onChanged: (_) {
+                //this action will change or toggle the theme
                 controller.toggletheme();
               })
         ],
         centerTitle: true,
         title: Text(
           'Advicer',
+          //using centralized theme
           style: themedata.textTheme.headline1,
         ),
       ),

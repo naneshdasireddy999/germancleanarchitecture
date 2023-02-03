@@ -18,11 +18,13 @@ class AdviceLoaded extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
+              //here also we are using color from centralized theme
               color: themedata.colorScheme.onPrimary),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
             child: Text(
               cubit.myadvice.advice,
+              //here the text is using from centralized theme
               style: themedata.textTheme.bodyText1,
               textAlign: TextAlign.center,
             ),

@@ -96,6 +96,7 @@ class AdviceLocalDataSourceImpl implements AdviceLocalDataSource {
     if (maps.isNotEmpty) {
       return AdviceModel.fromJson(maps.last);
     } else {
+      //throws cache exception when there is not data in sqflite database
       throw CacheException();
     }
   }

@@ -13,6 +13,7 @@ import 'package:http/http.dart' as http;
 
 import 'package:sqflite/sqflite.dart';
 
+//this injection container will contain all instances which we pass as paramet
 final sl = GetIt.I; //sl=service locator
 Future<void> init() async {
   //application layer

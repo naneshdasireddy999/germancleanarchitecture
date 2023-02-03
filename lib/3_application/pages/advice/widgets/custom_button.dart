@@ -11,6 +11,7 @@ class CustomButton extends StatelessWidget {
     final themedata = Theme.of(context);
     return InkResponse(
       onTap: () {
+        //this will just consult cubit method to get advice(here using state management)
         cubit.getadvice();
       },
       child: Material(
@@ -24,6 +25,7 @@ class CustomButton extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
             child: Text(
               'get advice',
+              //this will use centralized theme service
               style: themedata.textTheme.headline1,
             ),
           ),

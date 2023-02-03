@@ -24,6 +24,7 @@ class AdviceError extends StatelessWidget {
         ),
         Text(
           cubit.errormessage,
+          //here also we are using centralized text theme
           style: themedata.textTheme.headline1,
           textAlign: TextAlign.center,
         ),
