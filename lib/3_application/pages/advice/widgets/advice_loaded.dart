@@ -1,3 +1,4 @@
+import 'package:dfg/3_application/core/manager/values_manager.dart';
 import 'package:dfg/3_application/pages/advice/cubit/advice_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -21,7 +22,9 @@ class AdviceLoaded extends StatelessWidget {
               //here also we are using color from centralized theme
               color: themedata.colorScheme.onPrimary),
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+            //here iam using padding from  apppadding in values manager
+            padding: const EdgeInsets.symmetric(
+                horizontal: AppPadding.hp15, vertical: AppPadding.vp20),
             child: Text(
               cubit.myadvice.advice,
               //here the text is using from centralized theme

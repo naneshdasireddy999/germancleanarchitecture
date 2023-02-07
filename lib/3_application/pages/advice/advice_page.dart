@@ -1,3 +1,4 @@
+import 'package:dfg/3_application/core/manager/values_manager.dart';
 import 'package:dfg/3_application/core/services/theme_service.dart';
 import 'package:dfg/3_application/pages/advice/cubit/advice_cubit.dart';
 import 'package:dfg/3_application/pages/advice/widgets/advice_error.dart';
@@ -35,7 +36,8 @@ class AdvicePage extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 50),
+        //here iam using padding from  apppadding in values manager
+        padding: const EdgeInsets.symmetric(horizontal: AppPadding.hp50),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

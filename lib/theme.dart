@@ -1,42 +1,36 @@
+import 'package:dfg/3_application/core/manager/color_manager.dart';
+import 'package:dfg/3_application/core/manager/fonts_manager.dart';
+import 'package:dfg/3_application/core/manager/styles_manager.dart';
 import 'package:flutter/material.dart';
 
 class AppTheme {
   AppTheme._();
 
   // *****************
-  // static colors
-  // *****************
-  static final Color _lightPrimaryColor = Colors.blueGrey.shade50;
-  static final Color _lightPrimaryVariantColor = Colors.blueGrey.shade800;
-  static final Color _lightOnPrimaryColor = Colors.blueGrey.shade200;
-  static const Color _lightTextColorPrimary = Colors.black;
-  static const Color _appbarColorLight = Colors.blue;
-
-  static final Color _darkPrimaryColor = Colors.blueGrey.shade900;
-  static const Color _darkPrimaryVariantColor = Colors.black;
-  static final Color _darkOnPrimaryColor = Colors.blueGrey.shade300;
-  static const Color _darkTextColorPrimary = Colors.white;
-  static final Color _appbarColorDark = Colors.blueGrey.shade800;
-
-  static const Color _iconColor = Colors.white;
-
-  static const Color _accentColor = Color.fromRGBO(74, 217, 217, 1);
-
-  // *****************
   // Text Style - light
   // *****************
+
   static const TextStyle _lightHeadingText = TextStyle(
-      color: _lightTextColorPrimary,
-      fontFamily: "Rubik",
-      fontSize: 20,
-      fontWeight: FontWeight.bold);
+      //here iam using color manager
+      color: ColorManager.lightTextColorPrimary,
+      //here iam using fontconstants in font manager
+      fontFamily: FontConstants.fontfamily,
+      //here iam using fontsize in fontmanager
+      fontSize: FontSize.s20,
+      //here iam using fontweightmanager in font manager
+      fontWeight: FontWeightManager.bold);
 
   static const TextStyle _lightBodyText = TextStyle(
-      color: _lightTextColorPrimary,
-      fontFamily: "Rubik",
-      fontStyle: FontStyle.italic,
-      fontWeight: FontWeight.bold,
-      fontSize: 16);
+      //here iam using color manager
+      color: ColorManager.lightTextColorPrimary,
+      //here iam using fontconstants in font manager
+      fontFamily: FontConstants.fontfamily,
+      //here iam using fontstyle from fontmanager
+      fontStyle: FontStyles.italic,
+      //here iam using fontweightmanager in font manager
+      fontWeight: FontWeightManager.bold,
+      //here iam using fontsize in fontmanager
+      fontSize: FontSize.s16);
 
   static const TextTheme _lightTextTheme = TextTheme(
     headline1: _lightHeadingText,
@@ -47,14 +41,16 @@ class AppTheme {
   // Text Style - dark
   // *****************
   static final TextStyle _darkThemeHeadingTextStyle =
-      _lightHeadingText.copyWith(color: _darkTextColorPrimary);
+      //here iam using color manager
+      _lightHeadingText.copyWith(color: ColorManager.darkTextColorPrimary);
 
   static final TextStyle _darkThemeBodyeTextStyle =
-      _lightBodyText.copyWith(color: _darkTextColorPrimary);
+      //here iam using color manager
+      _lightBodyText.copyWith(color: ColorManager.darkTextColorPrimary);
 
   static final TextTheme _darkTextTheme = TextTheme(
-    headline1: _darkThemeHeadingTextStyle,
-    bodyText1: _darkThemeBodyeTextStyle,
+    displayMedium: _darkThemeHeadingTextStyle,
+    bodyMedium: _darkThemeBodyeTextStyle,
   );
 
   // *****************
@@ -62,30 +58,53 @@ class AppTheme {
   // *****************
 
   static final ThemeData lightTheme = ThemeData(
-      scaffoldBackgroundColor: _lightPrimaryColor,
+      //here iam using color manager
+//for textformfield use inpudecorationtheme
+
+      scaffoldBackgroundColor:
+          ColorManager.lightPrimaryColor, //main colors of an app
       appBarTheme: const AppBarTheme(
-          color: _appbarColorLight,
-          iconTheme: IconThemeData(color: _iconColor)),
-      bottomAppBarColor: _appbarColorLight,
+          //here iam using color manager
+          color: ColorManager.appbarColorLight, //main colors of an app
+          //here iam using color manager
+          iconTheme: IconThemeData(
+              color: ColorManager.iconColor)), //main colors of an app
+      //here iam using color manager
+      bottomAppBarColor: ColorManager.appbarColorLight, //main colors of an app
       colorScheme: ColorScheme.light(
-        primary: _lightPrimaryColor,
-        onPrimary: _lightOnPrimaryColor,
-        secondary: _accentColor,
-        primaryContainer: _lightPrimaryVariantColor,
+        //here iam using color manager
+        primary: ColorManager.lightPrimaryColor, //main colors of an app
+        //here iam using color manager
+        onPrimary: ColorManager.lightOnPrimaryColor, //main colors of an app
+        //here iam using color manager
+        secondary: ColorManager.accentColor, //main colors of an app
+        //here iam using color manager
+        primaryContainer:
+            ColorManager.lightPrimaryVariantColor, //main colors of an app
       ),
       textTheme: _lightTextTheme);
 
   static final ThemeData darkTheme = ThemeData(
-      scaffoldBackgroundColor: _darkPrimaryColor,
+      //here iam using color manager
+      scaffoldBackgroundColor: ColorManager.darkOnPrimaryColor,
       appBarTheme: AppBarTheme(
-          color: _appbarColorDark,
-          iconTheme: const IconThemeData(color: _iconColor)),
-      bottomAppBarColor: _appbarColorDark,
+          //here iam using color manager
+          color: ColorManager.appbarColorDark, //main colors of an app
+          //here iam using color manager
+          iconTheme: const IconThemeData(
+              color: ColorManager.iconColor)), //main colors of an app
+      //here iam using color manager
+      bottomAppBarColor: ColorManager.appbarColorDark, //main colors of an app
       colorScheme: ColorScheme.dark(
-        primary: _darkPrimaryColor,
-        secondary: _accentColor,
-        onPrimary: _darkOnPrimaryColor,
-        primaryContainer: _darkPrimaryVariantColor,
+        //here iam using color manager
+        primary: ColorManager.darkPrimaryColor, //main colors of an app
+        //here iam using color manager
+        secondary: ColorManager.accentColor, //main colors of an app
+        //here iam using color manager
+        onPrimary: ColorManager.darkOnPrimaryColor, //main colors of an app
+        //here iam using color manager
+        primaryContainer:
+            ColorManager.darkPrimaryVariantColor, //main colors of an app
       ),
       textTheme: _darkTextTheme);
 }

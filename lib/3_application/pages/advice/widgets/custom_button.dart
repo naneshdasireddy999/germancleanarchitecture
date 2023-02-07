@@ -1,3 +1,4 @@
+import 'package:dfg/3_application/core/manager/values_manager.dart';
 import 'package:dfg/3_application/pages/advice/cubit/advice_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -22,7 +23,9 @@ class CustomButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(15),
               color: themedata.colorScheme.secondary),
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+            //here iam using padding from  apppadding in values manager
+            padding: const EdgeInsets.symmetric(
+                horizontal: AppPadding.hp10, vertical: AppPadding.vp15),
             child: Text(
               'get advice',
               //this will use centralized theme service
