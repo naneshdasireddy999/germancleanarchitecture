@@ -2,6 +2,8 @@ import 'package:dfg/0_data/exception/exceptions.dart';
 import 'package:dfg/0_data/models/advice_model.dart';
 import 'package:http/http.dart' as http;
 
+const adviceapiurl = 'https://api.flutter-community.de/api/v1/advice';
+
 abstract class AdviceRemoteDatasource {
   //this is abstract class
   ///requests random advice from api return 'advicemodel' if successful
@@ -23,8 +25,7 @@ class AdviceRemoteDatasourceimpl implements AdviceRemoteDatasource {
     //here it will try to return advice model only
     //if something is wrong it will throw exception
     //please make a note that it will not return exception it will throw exception
-    var response = await client
-        .get(Uri.parse('https://api.flutter-community.de/api/v1/advice'));
+    var response = await client.get(Uri.parse(adviceapiurl));
     if (response.statusCode == 200) {
       var jsonstring = response.body;
       return adviceModelFromJson(jsonstring);
